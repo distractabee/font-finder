@@ -5,7 +5,7 @@ class Font extends Model {}
 
 Font.init(
   {
-    id: {
+    font_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
