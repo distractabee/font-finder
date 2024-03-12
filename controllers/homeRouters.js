@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
       // Find the logged in user based on session ID
       const fontData = await User.findByPk(req.session.user_id, {
         attributes: {exclude: ['password']},
-        include: [{ model: Font }],
+        include: [{ model: Fonts }],
       });
 
       const user = fontData.get({ plain: true });

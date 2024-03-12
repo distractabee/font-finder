@@ -1,7 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-class Font extends Model {}
-Font.init(
+
+class Fonts extends Model {}
+
+Fonts.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -28,4 +30,4 @@ Font.init(
     modelName: 'font',
   }
 );
-module.exports = Font;
+module.exports = Fonts;
