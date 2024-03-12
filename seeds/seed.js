@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const Font = require('../models/font');
+const Font = require('../models/Font');
 const fontData = require('./font-seeds.json');
 
 const seedDatabase = async () => {
