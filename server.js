@@ -25,7 +25,7 @@ const sess = {
 };
 
 app.get('/', (req, res) => {
-    res.render('main', { title: 'Home Page' });
+    res.render('homepage', { title: 'Home Page' });
 });
 
 // Inform Express.js on which template engine to use

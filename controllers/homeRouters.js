@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
         const fonts = fontData.map((fonts) => font.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('main', {
+        res.render('homepage', {
             fonts,
             logged_in: req.session.logged_in
         });
