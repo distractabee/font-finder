@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connections');
 
 class Fonts extends Model {}
 
@@ -30,4 +30,5 @@ Fonts.init(
     modelName: 'font',
   }
 );
+
 module.exports = Fonts;

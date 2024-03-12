@@ -49,7 +49,7 @@ User.init(
         },
         sequelize,
         timestamps: false,
-        freezeTableNAme: true,
+        freezeTableName: true,
         underscored: true,
         modleName: 'user',
     }

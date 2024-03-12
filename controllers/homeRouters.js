@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connections');
 const { Fonts, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
     try {
@@ -18,7 +19,7 @@ router.get("/", async (req, res) => {
         const fonts = fontData.map((fonts) => font.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('homepage', {
+        res.render('main', {
             fonts,
             logged_in: req.session.logged_in
         });
@@ -69,7 +70,7 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-reportError.get('/login', (req, res) => {
+router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/profile');
         return;

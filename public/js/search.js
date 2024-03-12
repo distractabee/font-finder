@@ -4,15 +4,15 @@ var searchBar = document.querySelectorAll('#searchBar');
 var searchResults = document.querySelector("#searchBar").value;
 var previousSearches = document.querySelector("#previous-searches");
 var $previousSearchButtonContainer = $("#previous-searches");
-var movieInfo = document.querySelector("#movie-info");
+//var movieInfo = document.querySelector("#movie-info");
 var previousSearch = $("#previousSearch");
-var isPreviousSearch = false;
-var movieContainer = document.getElementById("movie-container");
-var movieInfo = document.getElementById("movie-info");
+//var isPreviousSearch = false;
+//var movieContainer = document.getElementById("movie-container");
+//var movieInfo = document.getElementById("movie-info");
 
-var youTubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=&type=video&key=AIzaSyAcMm3fkVwE7lzrz_RxpYrVgltx__OS8T4&videoType=movie&channelId=UCx8ultakVd3KEaLdliOcc9Q";
-var wikiApi = "https://en.wikipedia.org/w/api.php";
-var omdbApi = "http://www.omdbapi.com/?i=tt3896198&apikey=710f7abf";
+//var youTubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=&type=video&key=AIzaSyAcMm3fkVwE7lzrz_RxpYrVgltx__OS8T4&videoType=movie&channelId=UCx8ultakVd3KEaLdliOcc9Q";
+//var wikiApi = "https://en.wikipedia.org/w/api.php";
+//var omdbApi = "http://www.omdbapi.com/?i=tt3896198&apikey=710f7abf";
 
 var storedSearches = null;
 
@@ -56,7 +56,7 @@ function searchTrailer(query) {
     movieContainer.style.display = "block";
     movieInfo.style.display = "block";
     
-    const URL="https://omdbapi.com/?t=" + query +"&page=1&apikey=710f7abf";
+    //const URL="https://omdbapi.com/?t=" + query +"&page=1&apikey=710f7abf";
 
     fetch(URL)
     .then(function (response) {
@@ -150,4 +150,58 @@ function usePreviousSearch(event) {
     isPreviousSearch = true;
     console.log(newSearch);
     searchTrailer(newSearch);
+}
+
+
+/////////////////////////////
+let pastCitySearches = [];
+
+const storedPastCitySearches = localStorage.getItem("pastCitySearches");
+if (storedPastCitySearches) {
+    pastCitySearches = JSON.parse(storedPastCitySearches);
+    updatePastCitySearchList(); // Call a function to update the list
+}
+
+if (cityName.trim() && !pastCitySearches.includes(cityName)) { // Check for duplicates
+    if (pastCitySearches.length >= 5) {
+        pastCitySearches.shift(); // Remove the oldest entry if the limit is reached
+    }
+    pastCitySearches.push(cityName); // Add the city to the list
+    localStorage.setItem("pastCitySearches", JSON.stringify(pastCitySearches)); // Update local storage
+    updatePastCitySearchList(); // Update the list of past city searches
+}
+
+pastCitySearches.forEach((pastCity) => {
+    const listItem = document.createElement("li");
+    const anchor = document.createElement("a"); // Create an anchor element
+    anchor.textContent = pastCity;
+    anchor.href = "#"; // Add a placeholder href attribute
+
+    // Add a click event listener to the anchor element to fill the search input
+    anchor.addEventListener("click", function () {
+        locationInput.value = pastCity; // Fill the search input with the past city
+    });
+
+    listItem.appendChild(anchor); // Append the anchor element to the list item
+    pastCityList.appendChild(listItem);
+});
+
+function updatePastCitySearchList() {
+    const pastCityList = document.getElementById("pastCityList");
+    pastCityList.innerHTML = ""; // Clear the existing list
+
+    pastCitySearches.forEach((pastCity) => {
+        const listItem = document.createElement("li");
+        const anchor = document.createElement("a"); // Create an anchor element
+        anchor.textContent = pastCity;
+        anchor.href = "#"; // Add a placeholder href attribute
+
+        // Add a click event listener to the anchor element to fill the search input
+        anchor.addEventListener("click", function () {
+            locationInput.value = pastCity; // Fill the search input with the past city
+        });
+
+        listItem.appendChild(anchor); // Append the anchor element to the list item
+        pastCityList.appendChild(listItem);
+    });
 }
