@@ -1,0 +1,21 @@
+<h1>Font Preview</h1>
+
+
+<!-- Font preview -->
+<ul>
+  {{#each fonts}}
+    <li style="font-family: {{font_name}};">
+      <strong>{{font_name}}</strong> - {{style}} - {{weight}}
+      <p id="sampleTextOutput">{{../sampleText}}</p> <!-- Display sample text -->
+    </li>
+  {{/each}}
+</ul>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sampleTextForm = document.getElementById('sampleTextForm');
+  const sampleTextInput = document.getElementById('sampleText');
+  const sampleTextOutput = document.getElementById('sampleTextOutput');
+});
+</script>
+

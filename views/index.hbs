@@ -1,0 +1,24 @@
+{{> header}}
+
+<main>
+    <h2>Welcome to Font Finder</h2>
+    <p>Explore our collection of fonts and find the perfect one for your project!</p>
+
+    <h3>Available Fonts</h3>
+    <form action="https://www.google.com/cse" id="cse-search-box">
+    <div>
+        <input type="hidden" name="cx" value="e0a70191f4a7e4e1f">
+        <input type="hidden" name="ie" value="UTF-8">
+        <input type="text" name="q" size="31">
+        <input type="submit" name="sa" value="Search">
+    </div>
+</form>
+
+    <ul>
+        {{#each fonts}}
+            <li>{{this.name}} - {{this.category}}</li>
+        {{/each}}
+    </ul>
+</main>
+
+{{> footer}}
