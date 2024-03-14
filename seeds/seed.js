@@ -1,8 +1,9 @@
 const sequelize = require('../config/connections');
-const { User, Fonts } = require('../models');
+const { User, Fonts, Post } = require('../models');
 
 const fontData = require('./fontData.json');
 const userData = require('./userData.json');
+const postData = require('./postData.json');
 
 const seedDatabase = async () => {
     console.log("SEEDING DATABASE");
@@ -19,6 +20,11 @@ const seedDatabase = async () => {
     const fonts = await Fonts.bulkCreate(fontData, {
         individualHooks: true,
         returning: true,
+    });
+
+    const posts = await Post.bulkCreate(postData, {
+        individualHooks: true,
+        returning: true
     });
 
     // console.log("");
