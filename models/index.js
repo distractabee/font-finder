@@ -1,5 +1,5 @@
 const User = require('./User');
-const Fonts = require('./Font');
+const Fonts = require('./Fonts');
 
 User.hasMany(Fonts, {
     foreignKey: 'user_id',
