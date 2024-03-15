@@ -29,6 +29,8 @@
   font-style: normal;
 }
 */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 header {
     display: flex;
 }
@@ -36,13 +38,122 @@ header {
 #ff-logo {
     align-items: flex-end;
     max-width: 50%;
-    margin: 0 0 0 40%;
+    margin: 0 0 0 25%;
 }
 
-nav {
+nav a {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     position: relative;
+    display: inline;
     bottom: 0;
     left: 0;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fff;
+    min-height:100vh;
+}
+
+.main-container{
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content{
+    width: 550px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container input{
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 10px;
+    padding: 0 20px;
+    background: #fff;
+    color: black;
+    font-size: 20px;
+    outline: none;
+}
+
+.font-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.font-holder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.font-holder li{
+    width: 550px;
+    min-height: 65px;
+    height: auto;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-family: 25px;
+    overflow: hidden;
+    border: 1px solid rgb(100, 100, 100);
+    margin: 5px 0;
+}
+
+/* Font style support from google fonts 
+
+font-family: 'Bitter', serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Meriweather', serif;
+font-family: 'Roboto', sans-seriff;
+font-family: 'Open Sans', sans-serif;
+*/
+
+#bitter{
+    font-family: 'Bitter', serif;
+}
+
+#oswald{
+    font-family: "Oswald", sans-serif;
+}
+
+#playfair-display{
+    font-family: 'Playfair Display', serif;
+}
+
+#meriweather{
+    font-family: 'Meriweather', serif;
+}
+
+#roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+#open-sans{
+    font-family: 'Open Sans', sans-serif;
 }

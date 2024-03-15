@@ -1,16 +1,19 @@
 const router = require('express').Router();
-const { Fonts } = require('../../models');
+const { User, Fonts } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-        const fontData = await User.create(req.body);
+        const userData = await User.create(req.body);
+
+        console.log(userData);
 
         req.session.save(() => {
-            req.session.user_id = fontData.id;
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
-
-            res.status(200).json(fontData);
+            req.session.username = userData.name;
+            res.status(200).json(userData);
         });
+
     } catch (err) {
     res.status(400).json(err);
     }

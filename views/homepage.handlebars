@@ -1,15 +1,36 @@
-<div class="columns">
-        <div class="column is-one-quarter">
-            <form class="box" for="Search-Bar" id="searchForm">
-                <div class="field">
-                    <label class="label">Search</label>
-                    <input type="text" id="searchBar" name="Search">
-                    <button type="submit" class="searchBtn">Search</button>
-                </div>      
-            </form>
-        </div>
-        <div class="column is-three-quarters">
+<div class="main-container">
+        <div class="main-content">
+            <input type="text" name="" id="textInput" placeholder="Type text here..." 
+            oninput="GenerateFont()">
 
-        </div>
+            <div class="font-contain">
+                
+                <div class="font-holder">
+                    <li><label for="Bitter" id="bitter">Bitter</label></li>
+                </div>
 
-</div>
+                <div class="font-holder">
+                    <li><label for="Oswald" id="oswald">Oswald</label></li>
+                </div>
+
+                <div class="font-holder">
+                    <li><label for="Playfair Display" id="playfair-display">Playfair Display</label></li>
+                </div>
+
+                <div class="font-holder">
+                    <li><label for="Meriweather" id="meriweather">Meriweather</label></li>
+                </div>
+
+                <div class="font-holder">
+                    <li><label for="Roboto" id="roboto">Roboto</label></li>
+                </div>
+
+                <div class="font-holder">
+                    <li><label for="Open Sans" id="open-sans">Open Sans</label></li>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/fonts.js"></script>

@@ -1,0 +1,49 @@
+<div class="card-container">
+    {{!-- post --}}
+    <div class="post-card" id="card">
+        <p class="post-title" id="title-text"><strong>{{post.post_title}}</strong></p>
+        <p class="post-info">—<span class="username">{{post.user.name}}</span>, <strong>{{format_date post.createdAt}} </strong></p> 
+        <br>
+        <div class="post-body" id="body-text">
+            {{post.post_body}}
+        </div>
+
+        {{#if post.myBlog}}
+            <div>
+                <button type="submit" class="button is-danger" id="delete-btn" >DELETE</button>
+            </div> 
+
+            <script src="/js/deletePost.js"></script>
+       
+        {{/if}}
+        
+        {{#if loggedIn}}
+        {{!-- line break to separate post and comments --}}
+        <hr>
+
+        <div class="comment-container" id="comment-card">
+            {{!-- existing comments --}}
+            {{#each comments}}
+                {{> card-comment}}
+            {{/each}}
+
+            {{!-- comment form --}}
+            <form id="comment-form">
+                    <div>
+                        <br>
+                        <label class="med-yellow-title" for="comment">Leave a comment</label> <br>
+                        <textarea id="comment" rows="3"></textarea>
+                        <div class="btn-container">
+                            <button type="submit" class="submit-btn">SUBMIT</button>
+                        </div> 
+                    </div>
+            </form>
+        </div>
+        <script src="/js/newComment.js"></script>
+        <script src="/js/deleteComment.js"></script>
+        <script src="/js/postId.js"></script>
+        {{else}}
+        <a href="/login" class="med-yellow-title">Log in to comment!</a>
+        {{/if}}
+    </div>
+</div>
