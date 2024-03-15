@@ -33,9 +33,10 @@ header {
     display: flex;
 }
 
-header img {
+#ff-logo {
     align-items: flex-end;
     max-width: 50%;
+    margin: 0 0 0 40%;
 }
 
 nav {
