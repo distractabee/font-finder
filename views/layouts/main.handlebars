@@ -14,26 +14,6 @@
 </head>
 
 <body>
-    <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <img src="/assets/ff-logo.png" id="ff-logo" alt="Welcome to FontFinder!">
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
   </div>
 
     <header>
@@ -53,5 +33,7 @@
     </header>
 
 {{{ body }}} 
+
+<script link="/js/fonts.js"></script>
 </body>
 </html>
