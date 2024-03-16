@@ -1,35 +1,43 @@
-const sequelize = require('../config/connections');
-const { User, Fonts } = require('../models');
+// Import necessary modules and models
+const sequelize = require('../config/connection');
+const { User, Post, Comment } = require('../models');
 
-const fontData = require('./fontData.json');
+// Import data from JSON files
 const userData = require('./userData.json');
+const postData = require('./postData.json');
+const commentData = require('./commentData.json');
 
+// Define the function to seed the database
 const seedDatabase = async () => {
-    console.log("SEEDING DATABASE");
-    await sequelize.sync({ force: true });
-    console.log("DATABASE SYNCED");
+  // Sync the database and drop existing tables (force: true)
+  await sequelize.sync({ force: true });
 
-    console.log("CREATING FONTS");
+  // Create users using bulkCreate with individual hooks
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
 
-    const users = await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
+  // Create posts and associate them with random users
+  const posts = await Post.bulkCreate(postData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  // Create comments and associate them with random posts
+  for (const comment of commentData) {
+    // Randomly select a post for each comment
+    const randomPost = posts[Math.floor(Math.random() * posts.length)];
+
+    await Comment.create({
+      ...comment,
+      post_id: randomPost.id,
     });
+  }
 
-    const fonts = await Fonts.bulkCreate(fontData, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    // console.log("");
-    // for (const font of fontData) {
-    //     await Fonts.create({
-    //         ...font,
-    //         user_id: fonts[Math.floor(Math. random() * users.length)].id,
-    //     });
-    // }
-
-    process.exit(0);
+  // Exit the script
+  process.exit(0);
 };
 
+// Call the seedDatabase function to seed the database
 seedDatabase();

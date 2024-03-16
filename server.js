@@ -16,7 +16,12 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Super secret secret',
-    cookie: {},
+    cookie: {
+        maxAge: 300000,
+        httpOnly: true,
+        secure: false,
+        sameSite: 'strict',
+      },
     resave: false,
     saveUnitialized: true,
     store: new SequelizeStore({
@@ -24,9 +29,7 @@ const sess = {
     })
 };
 
-app.get('/', (req, res) => {
-    res.render('homepage', { title: 'Home Page' });
-});
+app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
