@@ -11,6 +11,12 @@ body{
     min-height:100vh;
 }
 
+#ff-logo{
+  float: right;
+  width: 30%;
+  margin: 20px;
+}
+
 .main-container{
     width: 100%;
     height: auto;
@@ -74,15 +80,7 @@ body{
     margin: 5px 0;
 }
 
-/* Font style support from google fonts 
-
-font-family: 'Bitter', serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Playfair Display', serif;
-font-family: 'Meriweather', serif;
-font-family: 'Roboto', sans-seriff;
-font-family: 'Open Sans', sans-serif;
-*/
+/* Font style support from google fonts */
 
 #bitter{
     font-family: 'Bitter', serif;
