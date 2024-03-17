@@ -2,11 +2,12 @@
 
 :root {
     --darkColor: black;
-    --highlightColor: #bd0000;
-    --hoverColor: #808588;
-    --lightColor: #fff;
-    --standardPix: 12px;
-    --borRadSm: 8px;
+    --highlightColor: #00A1F1;
+    --linkColor: #4285f4;
+    --hoverColor: #fff;
+    --largePix: 12px;
+    --medPix: 8px;
+    --smPix: 4px;
 }
 
 * {
@@ -15,9 +16,31 @@
     box-sizing: border-box;
 }
 
+nav a {
+    color: var(--linkColor);
+    font-family: "Poppins", sans-serif;
+    margin: var(--smPix);
+    padding: var(--smPix) var(--largePix);
+    border: solid 1px;
+    border-radius: var(--medPix);
+    display: inline-block;
+}
+
+a:hover {
+    color: --var(--hoverColor)
+}
+
 body {
     background: #fff;
     min-height:100vh;
+}
+
+header {
+    overflow: hidden;
+}
+
+.form {
+    padding: var(--smPix) var(--medPix);
 }
 
 #ff-logo {
