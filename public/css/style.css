@@ -26,6 +26,8 @@ nav a {
     border: solid 1px;
     border-radius: var(--medPix);
     display: inline-block;
+    margin-top : 20px;
+    margin-left: 10px;
 }
 
 a:hover {
@@ -46,6 +48,9 @@ header {
     padding: var(--smPix) var(--medPix);
 }
 
+.button {
+    margin-top: 16px;
+}
 #ff-logo {
   float: right;
   width: 30%;
