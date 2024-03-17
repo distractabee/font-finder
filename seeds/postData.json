@@ -1,17 +1,17 @@
 [
     {
-      "title": "MVC Basics in Web Dev",
-      "content": "Explore Model-View-Controller (MVC) in web development, its roles, benefits, and impact on code organization.",
+      "title": "Use this font!",
+      "content": "If your trying to make a nice looking website, use this font! It's called 'Open Sans' and it's free!",
       "user_id": "1"
     },
     {
-      "title": "Implementing MVC in JavaScript Frameworks",
-      "content": "Learn how MVC is implemented in Angular, React, and Vue.js, with code examples for clarity.",
+      "title": "I want something new for my website!",
+      "content": "I'm trying to find a font I can use for my website. I want something that looks modern and clean. Any suggestions?",
       "user_id": "2"
     },
     {
-      "title": "MVC vs. MVVM: A Comparative Analysis",
-      "content": " Discover differences between MVC and MVVM, helping you choose the right architecture for your projects.",
+      "title": "What fonts do you use for your website?",
+      "content": "I use Gotham because it is a nice looking font and it's easy to read.",
       "user_id": "3"
     }
   ]
