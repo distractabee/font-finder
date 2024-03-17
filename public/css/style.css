@@ -115,6 +115,8 @@ header {
     margin: 5px 0;
 }
 
+/* Custom button code bc Bulma doesn't match the logo */
+
 .submit-btn {
     color: var(--lightColor);
     background-color: var(--buttonColor);
