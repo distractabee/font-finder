@@ -119,7 +119,7 @@ header {
     color: var(--lightColor);
     background-color: var(--buttonColor);
     border-radius: var(--medPix);
-    padding: var(--smPix) var(--largePix);
+    padding: var(--medPix) var(--largePix);
     margin: var(--smPix);
     border: solid 1px var(--buttonColor);
     font-family: "Poppins", sans-serif;
