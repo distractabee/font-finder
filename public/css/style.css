@@ -21,6 +21,7 @@
 nav a {
     color: var(--linkColor);
     font-family: "Poppins", sans-serif;
+    font-weight: 300;
     margin: var(--smPix);
     padding: var(--smPix) var(--largePix);
     border: solid 1px;
@@ -125,6 +126,13 @@ header {
     margin: var(--smPix);
     border: solid 1px var(--buttonColor);
     font-family: "Poppins", sans-serif;
+}
+
+h2,
+.post-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 /* Font style support from google fonts */
 

@@ -107,5 +107,22 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/blog', async (req, res) => {
+  try {
+    // Get all posts and JOIN with user data
+    const postData = await Post.findAll();
+    // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+    // Pass serialized data and session flag into the template
+    res.render('blog', {
+      posts,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Export the router
 module.exports = router;
