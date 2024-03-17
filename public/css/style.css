@@ -4,7 +4,9 @@
     --darkColor: black;
     --highlightColor: #00A1F1;
     --linkColor: #4285f4;
-    --hoverColor: #fff;
+    --lightColor: #fff;
+    --buttonColor: #34A853;
+    --buttonHoverColor: #7CBB00;
     --largePix: 12px;
     --medPix: 8px;
     --smPix: 4px;
@@ -33,6 +35,7 @@ a:hover {
 body {
     background: #fff;
     min-height:100vh;
+    font-family: "Poppins", sans-serif;
 }
 
 header {
@@ -112,6 +115,15 @@ header {
     margin: 5px 0;
 }
 
+.submit-btn {
+    color: var(--lightColor);
+    background-color: var(--buttonColor);
+    border-radius: var(--medPix);
+    padding: var(--smPix) var(--largePix);
+    margin: var(--smPix);
+    border: solid 1px var(--buttonColor);
+    font-family: "Poppins", sans-serif;
+}
 /* Font style support from google fonts */
 
 #bitter {
