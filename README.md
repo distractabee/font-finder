@@ -19,6 +19,13 @@ To run this website you must download and install certain dependencies including
 
 To use the website, you can sign up to create an account, which will allow you to post blogs as well as comment on other peoples' posts.
 
+Here are some screenshots!
+
+![an image of the Font Finder homepage with text generator](/public/images/ff-homepage.png)
+
+![an image of the user dash with new post form and past posts sidebar](/public/images/dash-blog.png)
+
+
 ## Credits
 
 [Dakota King](https://www.github.com/DakotaK92)
