@@ -1,18 +1,17 @@
 [
-    {
-      "title": "Use this font!",
-      "content": "If your trying to make a nice looking website, use this font! It's called 'Open Sans' and it's free!",
-      "user_id": "1"
-    },
-    {
-      "title": "I want something new for my website!",
-      "content": "I'm trying to find a font I can use for my website. I want something that looks modern and clean. Any suggestions?",
-      "user_id": "2"
-    },
-    {
-      "title": "What fonts do you use for your website?",
-      "content": "I use Gotham because it is a nice looking font and it's easy to read.",
-      "user_id": "3"
-    }
-  ]
-  
+  {
+    "title": "Use this font!",
+    "content": "If your trying to make a nice looking website, use this font! It's called 'Open Sans' and it's free!",
+    "user_id": "1"
+  },
+  {
+    "title": "I want something new for my website!",
+    "content": "I'm trying to find a font I can use for my website. I want something that looks modern and clean. Any suggestions?",
+    "user_id": "2"
+  },
+  {
+    "title": "What fonts do you use for your website?",
+    "content": "I use Gotham because it is a nice looking font and it's easy to read.",
+    "user_id": "3"
+  }
+]
